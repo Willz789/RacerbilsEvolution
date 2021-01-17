@@ -6,3 +6,5 @@ bilerne. Jeg har også valgt at tegne min egen bane, da jeg i starten havde nogl
 var skæve fra helt hvid og sort i starten (Burde ikke gøre nogen forskel).
 Den genetiske algoritme er bygget til at vælge biler efter hurtigste runde, mindst tid uden for banens grænser og 
 mindst tid i den forkerte retning. Jeg har også valgt at bruge bias til mit neurale netværk.
+Jeg lavede den også med en timer der siger, hvornår den næste genetiske algoritme starter, og hvis man trykker på 
+skærmen, så kan man se en graf der viser de bedste runder pr. generation.
