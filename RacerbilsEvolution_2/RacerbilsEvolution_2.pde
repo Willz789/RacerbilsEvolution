@@ -47,13 +47,13 @@ void draw() {
   image(track, 0, 0);
   // Jeg kører update() på alle biler før jeg kører display(), da update() afhænger af billedet
   for (CarController carController : carControllers) {
-    if (carController.car.calcFitness() >= 0) { // Mindsker lag
+    if (carController.car.calcFitness() >= 0) { // Mindsker lag ved at fjerner dårlige biler fra systemet.
       carController.update();
     }
   }
   if (showSimulation == true) { // displayer kun bilerne, hvis showSimulation er true
     for (CarController carController : carControllers) {
-      if (carController.car.calcFitness() >= 0) { // Mindsker lag.
+      if (carController.car.calcFitness() >= 0) { // Mindsker lag ved at fjerner dårlige biler fra skærmen.
         carController.display();
       }
     }
@@ -75,6 +75,11 @@ void draw() {
       textSize(16);
       textAlign(CENTER);
       text(bestLapPrGeneration.get(i), pillarWidth/2+i*pillarWidth, height-bestLapPrGeneration.get(i)*scl-10);
+    }
+    if (generationsTotal == 0) {
+      textSize(16);
+      textAlign(CENTER);
+      text("Der er ikke nogen generationer endnu", width/2, height/2+100);
     }
     fill(0);
     textSize(20);
